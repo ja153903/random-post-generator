@@ -17,3 +17,4 @@ if __name__ == '__main__':
     subreddit = SubredditBot()
     for post in subreddit._iter_subreddit('todayilearned').hot(limit=10):
         print(post.title)
+    print("new")
