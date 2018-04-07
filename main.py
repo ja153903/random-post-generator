@@ -1,6 +1,8 @@
 import json
 import requests 
-import pandas
+import pandas as pd
+import numpy as np 
+import csv
 
 # /r/AskReddit 
 
@@ -30,16 +32,22 @@ data = r.json();
 
 
 titles = []; 
-
+num = [];
 
 for i in range(1,5):
 	# print(data['data']['children'][i]['data']['title']);
 	titles.append(data['data']['children'][i]['data']['title']);
+	num.append(i); 
 
 
 
 print(len(titles));
 
+
+s = pd.Series(titles, index = num); 
+csvObj = s.to_csv();
+
+print(csvObj); 
 
 
 # for key in r.text.items():
