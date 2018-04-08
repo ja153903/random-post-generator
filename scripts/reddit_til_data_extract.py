@@ -1,4 +1,5 @@
 import praw
+import csv
 
 class SubredditBot:
     def __init__(self):
